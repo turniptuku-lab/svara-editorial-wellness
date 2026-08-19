@@ -100,7 +100,7 @@ function FooterCol({
         {items.map((i) => (
           <li key={i.label}>
             <Link
-              to={i.to}
+              to={i.to as never}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {i.label}

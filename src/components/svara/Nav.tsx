@@ -37,7 +37,7 @@ export function Nav() {
             {links.map((l) => (
               <li key={l.label}>
                 <Link
-                  to={l.to}
+                  to={l.to as never}
                   activeOptions={{ exact: l.to === "/" }}
                   activeProps={{ className: "bg-primary text-primary-foreground" }}
                   inactiveProps={{ className: "text-muted-foreground hover:bg-cream" }}
@@ -82,7 +82,7 @@ export function Nav() {
               {links.map((l) => (
                 <li key={l.label}>
                   <Link
-                    to={l.to}
+                    to={l.to as never}
                     activeOptions={{ exact: l.to === "/" }}
                     activeProps={{ className: "text-foreground" }}
                     inactiveProps={{ className: "text-muted-foreground" }}

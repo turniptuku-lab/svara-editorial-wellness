@@ -141,17 +141,12 @@ export const practices: Practice[] = [
   { name: "Breath & Stillness", instructor: "Devi Menon", duration: "10 min", level: "All levels", category: "Meditation", image: goDeeper },
   { name: "Open Hips, Open Day", instructor: "Nikhil Sen", duration: "25 min", level: "All levels", category: "Flexibility", image: course3 },
   { name: "First Mat Day", instructor: "Maya Iyer", duration: "18 min", level: "Beginner", category: "Beginner", image: course2 },
-  { name: "Slow Sunrise Flow", instructor: "Devi Menon", duration: "22 min", level: "Beginner", category: "Morning", image: hero0(),
-  },
+  { name: "Slow Sunrise Flow", instructor: "Devi Menon", duration: "22 min", level: "Beginner", category: "Morning", image: heroImg },
   { name: "Unclench Your Jaw", instructor: "Aanya Rao", duration: "8 min", level: "All levels", category: "Stress", image: journal3 },
   { name: "Steady Core", instructor: "Maya Iyer", duration: "28 min", level: "Intermediate", category: "Strength", image: featured },
   { name: "Long Exhale", instructor: "Devi Menon", duration: "12 min", level: "All levels", category: "Meditation", image: story },
   { name: "Late Night Unwind", instructor: "Nikhil Sen", duration: "16 min", level: "Beginner", category: "Sleep", image: community2 },
 ];
-
-function hero0() {
-  return heroImg;
-}
 
 export type Article = {
   slug: string;
