@@ -59,7 +59,7 @@ export function ActionLink({
 }: BtnProps & { to: string } & Omit<ComponentProps<typeof Link>, "to" | "children" | "className">) {
   return (
     <Link
-      to={to}
+      to={to as never}
       className={`${buttonBase} ${buttonTones[tone]} ${buttonSizes[size]} ${className}`}
       {...rest}
     >
@@ -96,7 +96,7 @@ export function ArrowLink({
 }) {
   return (
     <Link
-      to={to}
+      to={to as never}
       className={`group inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-primary ${className}`}
     >
       {children}
