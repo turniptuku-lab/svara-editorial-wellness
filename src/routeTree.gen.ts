@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as PracticeRouteImport } from './routes/practice'
 import { Route as CoursesIndexRouteImport } from './routes/courses.index'
+import { Route as CoursesThe30DayYogaJourneyRouteImport } from './routes/courses.the-30-day-yoga-journey'
 import { Route as JournalIndexRouteImport } from './routes/journal.index'
 import { Route as JournalArticleRouteImport } from './routes/journal.article'
 
@@ -36,6 +37,12 @@ const CoursesIndexRoute = CoursesIndexRouteImport.update({
   path: '/courses/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CoursesThe30DayYogaJourneyRoute =
+  CoursesThe30DayYogaJourneyRouteImport.update({
+    id: '/courses/the-30-day-yoga-journey',
+    path: '/courses/the-30-day-yoga-journey',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const JournalIndexRoute = JournalIndexRouteImport.update({
   id: '/journal/',
   path: '/journal/',
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/practice': typeof PracticeRoute
+  '/courses/the-30-day-yoga-journey': typeof CoursesThe30DayYogaJourneyRoute
   '/journal/article': typeof JournalArticleRoute
   '/courses/': typeof CoursesIndexRoute
   '/journal/': typeof JournalIndexRoute
@@ -59,6 +67,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/practice': typeof PracticeRoute
+  '/courses/the-30-day-yoga-journey': typeof CoursesThe30DayYogaJourneyRoute
   '/journal/article': typeof JournalArticleRoute
   '/courses': typeof CoursesIndexRoute
   '/journal': typeof JournalIndexRoute
@@ -68,6 +77,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/practice': typeof PracticeRoute
+  '/courses/the-30-day-yoga-journey': typeof CoursesThe30DayYogaJourneyRoute
   '/journal/article': typeof JournalArticleRoute
   '/courses/': typeof CoursesIndexRoute
   '/journal/': typeof JournalIndexRoute
@@ -78,17 +88,25 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/practice'
+    | '/courses/the-30-day-yoga-journey'
     | '/journal/article'
     | '/courses/'
     | '/journal/'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/about' | '/practice' | '/journal/article' | '/courses' | '/journal'
+    | '/'
+    | '/about'
+    | '/practice'
+    | '/courses/the-30-day-yoga-journey'
+    | '/journal/article'
+    | '/courses'
+    | '/journal'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/practice'
+    | '/courses/the-30-day-yoga-journey'
     | '/journal/article'
     | '/courses/'
     | '/journal/'
@@ -98,6 +116,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   PracticeRoute: typeof PracticeRoute
+  CoursesThe30DayYogaJourneyRoute: typeof CoursesThe30DayYogaJourneyRoute
   JournalArticleRoute: typeof JournalArticleRoute
   CoursesIndexRoute: typeof CoursesIndexRoute
   JournalIndexRoute: typeof JournalIndexRoute
@@ -133,6 +152,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CoursesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/courses/the-30-day-yoga-journey': {
+      id: '/courses/the-30-day-yoga-journey'
+      path: '/courses/the-30-day-yoga-journey'
+      fullPath: '/courses/the-30-day-yoga-journey'
+      preLoaderRoute: typeof CoursesThe30DayYogaJourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/journal/': {
       id: '/journal/'
       path: '/journal'
@@ -154,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   PracticeRoute: PracticeRoute,
+  CoursesThe30DayYogaJourneyRoute: CoursesThe30DayYogaJourneyRoute,
   JournalArticleRoute: JournalArticleRoute,
   CoursesIndexRoute: CoursesIndexRoute,
   JournalIndexRoute: JournalIndexRoute,
